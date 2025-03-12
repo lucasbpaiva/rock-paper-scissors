@@ -18,3 +18,6 @@ function getHumanChoice() {
     let playerChoice = prompt(`Choose "rock", "paper" or "scissors"`);
     return playerChoice;
 }
+
+let humanScore = 0;
+let computerScore = 0;
