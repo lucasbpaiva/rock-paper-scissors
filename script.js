@@ -1,5 +1,5 @@
 function getComputerChoice() {
-    
+
     // generate a random number between 0 and 2
     let choice = Math.floor(Math.random() * 3);
 
@@ -12,4 +12,9 @@ function getComputerChoice() {
     }
 
     return choice;
+}
+
+function getHumanChoice() {
+    let playerChoice = prompt(`Choose "rock", "paper" or "scissors"`);
+    return playerChoice;
 }
