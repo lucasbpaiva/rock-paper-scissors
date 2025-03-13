@@ -91,6 +91,7 @@ function playGame() {
     computerScore = 0;
 }
 
+alert("Open the console to play a game:\n Ctrl + Shift + J on Windows/Linux\n Cmd + Option + J on Mac")
 console.log("Call function playGame() to play a game of rock, paper, scissors")
 
 // play a single round
