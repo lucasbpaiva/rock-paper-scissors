@@ -91,6 +91,8 @@ function playGame() {
     computerScore = 0;
 }
 
+console.log("Call function playGame() to play a game of rock, paper, scissors")
+
 // play a single round
 // let humanChoice = getHumanChoice();
 // let computerChoice = getComputerChoice();
