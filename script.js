@@ -73,10 +73,11 @@ function playGame() {
 
     let i = 0;
 
-    while (computerScore < 3 & humanScore < 3) { //play until either the player or computer reaches a score of 3
+    while ((computerScore < 3 & humanScore < 3) & (i < 5 || gameTied)) { //play until either the player or computer reaches a score of 3
         humanChoice = getHumanChoice();
         computerChoice = getComputerChoice();
         playRound(humanChoice, computerChoice);
+        gameTied = humanScore == computerScore; //boolean to tell whether the game is tied or not
         i++;
     }
 
