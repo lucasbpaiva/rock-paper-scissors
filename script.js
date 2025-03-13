@@ -1,3 +1,6 @@
+let humanScore = 0;
+let computerScore = 0;
+
 function getComputerChoice() {
 
     // generate a random number between 0 and 2
@@ -20,9 +23,6 @@ function getHumanChoice() {
     let humanChoice = prompt(`Choose "rock", "paper" or "scissors"`);
     return humanChoice;
 }
-
-let humanScore = 0;
-let computerScore = 0;
 
 function playRound(humanChoice, computerChoice) {
     // make input case insensitive
@@ -66,7 +66,33 @@ function playRound(humanChoice, computerChoice) {
     }
 }
 
-let humanChoice = getHumanChoice();
-let computerChoice = getComputerChoice();
+function playGame() {
 
-playRound(humanChoice, computerChoice);
+    let humanChoice = "maybe rock?";
+    let computerChoice = "perhaps paper?";
+
+    let i = 0;
+
+    while ((i < 5) || (humanScore == computerScore)) { //play for five rounds and if tied keep playing until there is a winner
+        humanChoice = getHumanChoice();
+        computerChoice = getComputerChoice();
+        playRound(humanChoice, computerChoice);
+        i++;
+    }
+
+    if (humanScore < computerScore) { //computer wins
+        console.log(`You lose!\n Computer score: ${computerScore}\n Your Score: ${humanScore}`);
+    } else { //human wins
+        console.log(`You win!\n Computer score: ${computerScore}\n Your Score: ${humanScore}`);
+    }
+
+    // reset scores to play another game
+    humanScore = 0;
+    computerScore = 0;
+}
+
+// play a single round
+// let humanChoice = getHumanChoice();
+// let computerChoice = getComputerChoice();
+
+// playRound(humanChoice, computerChoice);
