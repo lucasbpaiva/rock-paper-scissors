@@ -20,7 +20,7 @@ function getComputerChoice() {
 function getHumanChoice() {
     // simply ask for user input and return it without any processing
     // assume player will type a valid string
-    let humanChoice = prompt(`Choose "rock", "paper" or "scissors"`);
+    let humanChoice = prompt(`Choose rock, paper or scissors`);
     return humanChoice;
 }
 
@@ -73,7 +73,7 @@ function playGame() {
 
     let i = 0;
 
-    while ((i < 5) || (humanScore == computerScore)) { //play for five rounds and if tied keep playing until there is a winner
+    while (computerScore < 3 & humanScore < 3) { //play until either the player or computer reaches a score of 3
         humanChoice = getHumanChoice();
         computerChoice = getComputerChoice();
         playRound(humanChoice, computerChoice);
