@@ -29,41 +29,38 @@ function playRound(humanChoice, computerChoice) {
     humanChoice = humanChoice.toLowerCase();
 
     if (humanChoice == computerChoice) { //tie
-        let para = document.createElement("p");
-        para.textContent = "It's a tie!";
-
-        console.log("It's a tie!");
+        roundScore.textContent = "It's a tie!";
 
     } else if (humanChoice == "rock") { //not a tie and human chose rock
         
         if (computerChoice == "paper"){ // rock loses to paper
-            console.log("You lose! Paper beats Rock");
+            roundScore.textContent = "You lose! Paper beats Rock";
             computerScore++;
         
         } else { // rock beats scissors
-            console.log("You win! Rock beats Scissors");
+            roundScore.textContent = "You win! Rock beats Scissors";
             humanScore++;
         }
 
     } else if (humanChoice == "paper") { // not a tie and human chose paper
         
         if (computerChoice == "scissors"){ // paper loses to scissors
-            console.log("You lose! Scissors beats Paper");
+            roundScore.textContent = "You lose! Scissors beats Paper";
             computerScore++;
         
         } else { // paper beats rock
-            console.log("You win! Paper beats Rock");
+            roundScore.textContent = "You win! Paper beats Rock";
             humanScore++;
         }
 
     } else { // not a tie and human chose scissors
         
         if (computerChoice == "rock"){ // scissors loses to rock
-            console.log("You lose! Rock beats Scissors");
+            roundScore.textContent = "You lose! Rock beats Scissors";
             computerScore++;
         
         } else { // scissors beats paper
-            console.log("You win! Scissors beats Paper");
+            roundScore.textContent = "You win! Scissors beats Paper";
             humanScore++;
         }
     }
@@ -107,7 +104,8 @@ function playGame() {
 let rock = document.querySelector(".rock-btn");
 let paper = document.querySelector(".paper-btn");
 let scissors = document.querySelector(".scissors-btn");
-let scoreBoard = document.querySelector(".scoreBoard")
+let scoreBoard = document.querySelector(".scoreBoard");
+let roundScore = document.querySelector(".roundScore")
 
 rock.addEventListener("click", () => {
     playRound("rock", getComputerChoice());
