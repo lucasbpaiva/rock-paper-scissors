@@ -92,27 +92,84 @@ function playGame() {
     computerScore = 0;
 }
 
-// alert("Open the console to play a game:\n Ctrl + Shift + J on Windows/Linux\n Cmd + Option + J on Mac")
-// console.log("Call function playGame() to play a game of rock, paper, scissors")
-
-// play a single round
-// let humanChoice = getHumanChoice();
-// let computerChoice = getComputerChoice();
-
-// playRound(humanChoice, computerChoice);
-
 let rock = document.querySelector(".rock-btn");
 let paper = document.querySelector(".paper-btn");
 let scissors = document.querySelector(".scissors-btn");
 let scoreBoard = document.querySelector(".scoreBoard");
-let roundScore = document.querySelector(".roundScore")
+let roundScore = document.querySelector(".roundScore");
+let playerScoreBoard = document.querySelector(".playerScoreBoard");
+let computerScoreBoard = document.querySelector(".computerScoreBoard");
+let finalScore = document.querySelector(".finalScore")
 
 rock.addEventListener("click", () => {
     playRound("rock", getComputerChoice());
+
+    if (computerScore == 5 || humanScore == 5) {
+        if (humanScore < computerScore) { //computer wins
+            let para = document.createElement("p");
+            para.textContent = `You lose!\n Your Score: ${humanScore}\n Computer score: ${computerScore}`;
+            finalScore.appendChild(para);
+            // reset scores to play another game
+            humanScore = 0;
+            computerScore = 0;
+        } else { //human wins
+            let para = document.createElement("p");
+            para.textContent = `You win!\n Your Score: ${humanScore} Computer score: ${computerScore}`;
+            finalScore.appendChild(para);
+            // reset scores to play another game
+            humanScore = 0;
+            computerScore = 0;
+        }
+    }
+
+    playerScoreBoard.textContent = `Player: ${humanScore}`;
+    computerScoreBoard.textContent = `Computer: ${computerScore}`;
 });
 paper.addEventListener("click", () => {
     playRound("paper", getComputerChoice());
+
+    if (computerScore == 5 || humanScore == 5) {
+        if (humanScore < computerScore) { //computer wins
+            let para = document.createElement("p");
+            para.textContent = `You lose!\n Your Score: ${humanScore}\n Computer score: ${computerScore}`;
+            finalScore.appendChild(para);
+            // reset scores to play another game
+            humanScore = 0;
+            computerScore = 0;
+        } else { //human wins
+            let para = document.createElement("p");
+            para.textContent = `You win!\n Your Score: ${humanScore} Computer score: ${computerScore}`;
+            finalScore.appendChild(para);
+            // reset scores to play another game
+            humanScore = 0;
+            computerScore = 0;
+        }
+    }
+
+    playerScoreBoard.textContent = `Player: ${humanScore}`;
+    computerScoreBoard.textContent = `Computer: ${computerScore}`;
 });
 scissors.addEventListener("click", () => {
     playRound("scissors", getComputerChoice())
+
+    if (computerScore == 5 || humanScore == 5) {
+        if (humanScore < computerScore) { //computer wins
+            let para = document.createElement("p");
+            para.textContent = `You lose!\n Your Score: ${humanScore}\n Computer score: ${computerScore}`;
+            finalScore.appendChild(para);
+            // reset scores to play another game
+            humanScore = 0;
+            computerScore = 0;
+        } else { //human wins
+            let para = document.createElement("p");
+            para.textContent = `You win!\n Your Score: ${humanScore} Computer score: ${computerScore}`;
+            finalScore.appendChild(para);
+            // reset scores to play another game
+            humanScore = 0;
+            computerScore = 0;
+        }
+    }
+
+    playerScoreBoard.textContent = `Player: ${humanScore}`;
+    computerScoreBoard.textContent = `Computer: ${computerScore}`;
 });
