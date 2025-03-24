@@ -29,6 +29,9 @@ function playRound(humanChoice, computerChoice) {
     humanChoice = humanChoice.toLowerCase();
 
     if (humanChoice == computerChoice) { //tie
+        let para = document.createElement("p");
+        para.textContent = "It's a tie!";
+
         console.log("It's a tie!");
 
     } else if (humanChoice == "rock") { //not a tie and human chose rock
@@ -92,11 +95,26 @@ function playGame() {
     computerScore = 0;
 }
 
-alert("Open the console to play a game:\n Ctrl + Shift + J on Windows/Linux\n Cmd + Option + J on Mac")
-console.log("Call function playGame() to play a game of rock, paper, scissors")
+// alert("Open the console to play a game:\n Ctrl + Shift + J on Windows/Linux\n Cmd + Option + J on Mac")
+// console.log("Call function playGame() to play a game of rock, paper, scissors")
 
 // play a single round
 // let humanChoice = getHumanChoice();
 // let computerChoice = getComputerChoice();
 
 // playRound(humanChoice, computerChoice);
+
+let rock = document.querySelector(".rock-btn");
+let paper = document.querySelector(".paper-btn");
+let scissors = document.querySelector(".scissors-btn");
+let scoreBoard = document.querySelector(".scoreBoard")
+
+rock.addEventListener("click", () => {
+    playRound("rock", getComputerChoice());
+});
+paper.addEventListener("click", () => {
+    playRound("paper", getComputerChoice());
+});
+scissors.addEventListener("click", () => {
+    playRound("scissors", getComputerChoice())
+});
