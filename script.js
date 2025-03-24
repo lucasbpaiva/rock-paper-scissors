@@ -66,32 +66,6 @@ function playRound(humanChoice, computerChoice) {
     }
 }
 
-function playGame() {
-
-    let humanChoice = "maybe rock?";
-    let computerChoice = "perhaps paper?";
-
-    let i = 0;
-
-    while ((computerScore < 3 & humanScore < 3) & (i < 5 || gameTied)) { //play until either the player or computer reaches a score of 3
-        humanChoice = getHumanChoice();
-        computerChoice = getComputerChoice();
-        playRound(humanChoice, computerChoice);
-        gameTied = humanScore == computerScore; //boolean to tell whether the game is tied or not
-        i++;
-    }
-
-    if (humanScore < computerScore) { //computer wins
-        console.log(`You lose!\n Computer score: ${computerScore}\n Your Score: ${humanScore}`);
-    } else { //human wins
-        console.log(`You win!\n Computer score: ${computerScore}\n Your Score: ${humanScore}`);
-    }
-
-    // reset scores to play another game
-    humanScore = 0;
-    computerScore = 0;
-}
-
 let rock = document.querySelector(".rock-btn");
 let paper = document.querySelector(".paper-btn");
 let scissors = document.querySelector(".scissors-btn");
