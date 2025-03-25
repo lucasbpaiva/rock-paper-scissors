@@ -65,16 +65,12 @@ function playRound(humanChoice, computerChoice) {
 
 function announceScore() {
     if (humanScore < computerScore) { //computer wins
-        let para = document.createElement("p");
-        para.textContent = `You lose!\n Your Score: ${humanScore}\n Computer score: ${computerScore}`;
-        finalScore.appendChild(para);
+        finalScore.textContent = `You lose! Your Score: ${humanScore} Computer score: ${computerScore}`;
         // reset scores to play another game
         humanScore = 0;
         computerScore = 0;
     } else { //human wins
-        let para = document.createElement("p");
-        para.textContent = `You win!\n Your Score: ${humanScore} Computer score: ${computerScore}`;
-        finalScore.appendChild(para);
+        finalScore.textContent = `You win! Your Score: ${humanScore} Computer score: ${computerScore}`;
         // reset scores to play another game
         humanScore = 0;
         computerScore = 0;
