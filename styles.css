@@ -1,6 +1,6 @@
-/* * {
+* {
     border: 3px solid green;
-} */
+}
 
 body {
     display: flex;
@@ -8,18 +8,15 @@ body {
     padding: 20px 20%;
 }
 
-.buttons {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    height: 200px;
-}
-
 .scoreBoard {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     border: 3px solid green;
+}
+
+.scoreMessage {
+    min-height: 100px;
 }
 
 .roundScore {
@@ -31,4 +28,11 @@ body {
     align-items: center;
     justify-content: space-around;
     border: 3px solid green;
+}
+
+.buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 200px;
 }
