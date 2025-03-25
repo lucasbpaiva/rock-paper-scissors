@@ -31,33 +31,33 @@ function playRound(humanChoice, computerChoice) {
     } else if (humanChoice == "rock") { //not a tie and human chose rock
         
         if (computerChoice == "paper"){ // rock loses to paper
-            roundScore.textContent = "You lose! Paper beats Rock";
+            roundScore.textContent = "You lose!\r\n Paper beats Rock";
             computerScore++;
         
         } else { // rock beats scissors
-            roundScore.textContent = "You win! Rock beats Scissors";
+            roundScore.textContent = "You win!\r\n Rock beats Scissors";
             humanScore++;
         }
 
     } else if (humanChoice == "paper") { // not a tie and human chose paper
         
         if (computerChoice == "scissors"){ // paper loses to scissors
-            roundScore.textContent = "You lose! Scissors beats Paper";
+            roundScore.textContent = "You lose!\r\n Scissors beats Paper";
             computerScore++;
         
         } else { // paper beats rock
-            roundScore.textContent = "You win! Paper beats Rock";
+            roundScore.textContent = "You win!\r\n Paper beats Rock";
             humanScore++;
         }
 
     } else { // not a tie and human chose scissors
         
         if (computerChoice == "rock"){ // scissors loses to rock
-            roundScore.textContent = "You lose! Rock beats Scissors";
+            roundScore.textContent = "You lose!\r\n Rock beats Scissors";
             computerScore++;
         
         } else { // scissors beats paper
-            roundScore.textContent = "You win! Scissors beats Paper";
+            roundScore.textContent = "You win!\r\n Scissors beats Paper";
             humanScore++;
         }
     }
@@ -65,9 +65,9 @@ function playRound(humanChoice, computerChoice) {
 
 function announceScore() {
     if (humanScore < computerScore) { //computer wins
-        finalScore.textContent = `You lose! Your Score: ${humanScore} Computer score: ${computerScore}`;
+        finalScore.textContent = `You lose!\r\n Your Score: ${humanScore} Computer score: ${computerScore}`;
     } else { //human wins
-        finalScore.textContent = `You win! Your Score: ${humanScore} Computer score: ${computerScore}`;
+        finalScore.textContent = `You win!\r\n Your Score: ${humanScore} Computer score: ${computerScore}`;
     }
     let rematchButton = document.createElement("button");
     rematchButton.textContent = "Play again?";
