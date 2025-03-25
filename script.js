@@ -77,6 +77,11 @@ function announceScore() {
     }
 }
 
+function capitalizeFirstLetter(text) {
+    text = text.toLowerCase();
+    return text[0].toUpperCase() + text.slice(1);
+}
+
 let humanScore = 0;
 let computerScore = 0;
 let rock = document.querySelector(".rock-btn");
@@ -84,12 +89,18 @@ let paper = document.querySelector(".paper-btn");
 let scissors = document.querySelector(".scissors-btn");
 let scoreBoard = document.querySelector(".scoreBoard");
 let roundScore = document.querySelector(".roundScore");
+let playerHand = document.querySelector(".playerHand");
+let computerHand = document.querySelector(".computerHand");
 let playerScoreBoard = document.querySelector(".playerScoreBoard");
 let computerScoreBoard = document.querySelector(".computerScoreBoard");
 let finalScore = document.querySelector(".finalScore")
 
 rock.addEventListener("click", () => {
-    playRound("rock", getComputerChoice());
+    let computerChoice = getComputerChoice();
+    playerHand.textContent = "Rock";
+    computerHand.textContent = `${capitalizeFirstLetter(computerChoice)}`;
+
+    playRound("rock", computerChoice);
 
     if (computerScore == 5 || humanScore == 5) {
         announceScore();
@@ -99,7 +110,11 @@ rock.addEventListener("click", () => {
     computerScoreBoard.textContent = `Computer: ${computerScore}`;
 });
 paper.addEventListener("click", () => {
-    playRound("paper", getComputerChoice());
+    let computerChoice = getComputerChoice();
+    playerHand.textContent = "Paper";
+    computerHand.textContent = `${capitalizeFirstLetter(computerChoice)}`;
+
+    playRound("paper", computerChoice);
 
     if (computerScore == 5 || humanScore == 5) {
         announceScore();
@@ -109,7 +124,11 @@ paper.addEventListener("click", () => {
     computerScoreBoard.textContent = `Computer: ${computerScore}`;
 });
 scissors.addEventListener("click", () => {
-    playRound("scissors", getComputerChoice())
+    let computerChoice = getComputerChoice();
+    playerHand.textContent = "Scissors";
+    computerHand.textContent = `${capitalizeFirstLetter(computerChoice)}`;
+
+    playRound("scissors", computerChoice);
 
     if (computerScore == 5 || humanScore == 5) {
         announceScore();
