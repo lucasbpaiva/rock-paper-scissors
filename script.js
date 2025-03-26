@@ -63,11 +63,11 @@ function playRound(humanChoice, computerChoice) {
     }
 }
 
-function announceScore() {
+function announceFinalScore() {
     if (humanScore < computerScore) { //computer wins
-        finalScore.textContent = `You lose!\r\n Your Score: ${humanScore} Computer score: ${computerScore}`;
+        finalScore.textContent = `You lose!\r\n Your Score: ${humanScore}    |    Computer score: ${computerScore}`;
     } else { //human wins
-        finalScore.textContent = `You win!\r\n Your Score: ${humanScore} Computer score: ${computerScore}`;
+        finalScore.textContent = `You win!\r\n Your Score: ${humanScore}    |    Computer score: ${computerScore}`;
     }
     let rematchButton = document.createElement("button");
     rematchButton.textContent = "Play again?";
@@ -82,7 +82,7 @@ function announceScore() {
         // reset scores to play another game
         humanScore = 0;
         computerScore = 0;
-        updateScores();
+        updateScoreBoard();
     })
 }
 
@@ -91,7 +91,7 @@ function capitalizeFirstLetter(text) {
     return text[0].toUpperCase() + text.slice(1);
 }
 
-function updateScores() {
+function updateScoreBoard() {
     playerScoreBoard.textContent = `Player: ${humanScore}`;
     computerScoreBoard.textContent = `Computer: ${computerScore}`;
 }
@@ -110,56 +110,52 @@ let computerScoreBoard = document.querySelector(".computerScoreBoard");
 let finalScoreBoard = document.querySelector(".finalScoreBoard");
 let finalScore = document.querySelector(".finalScore");
 
-rock.addEventListener("click", (event) => {
+rock.addEventListener("click", () => {
 
     if (computerScore < 5 && humanScore < 5) { //stop button from working if the game is over
-        if (computerScore >= 5 || humanScore >= 5) {
-            event.preventDefault();
-        }
-    
         let computerChoice = getComputerChoice();
+
         playerHand.textContent = "Rock";
         computerHand.textContent = `${capitalizeFirstLetter(computerChoice)}`;
     
         playRound("rock", computerChoice);
+        updateScoreBoard();
     
         if (computerScore == 5 || humanScore == 5) {
-            announceScore();
+            announceFinalScore();
         }
     }
-
-    updateScores();
 });
 
-paper.addEventListener("click", (event) => {
+paper.addEventListener("click", () => {
 
     if (computerScore < 5 && humanScore < 5){ //stop button from working if the game is over
         let computerChoice = getComputerChoice();
+
         playerHand.textContent = "Paper";
         computerHand.textContent = `${capitalizeFirstLetter(computerChoice)}`;
     
         playRound("paper", computerChoice);
+        updateScoreBoard();
     
         if (computerScore == 5 || humanScore == 5) {
-            announceScore();
+            announceFinalScore();
         }
     }
-
-    updateScores();
 });
 
-scissors.addEventListener("click", (event) => {
+scissors.addEventListener("click", () => {
     if (computerScore < 5 && humanScore < 5) { //stop button from working if the game is over
         let computerChoice = getComputerChoice();
+
         playerHand.textContent = "Scissors";
         computerHand.textContent = `${capitalizeFirstLetter(computerChoice)}`;
     
         playRound("scissors", computerChoice);
+        updateScoreBoard();
 
         if (computerScore == 5 || humanScore == 5) {
-            announceScore();
+            announceFinalScore();
         }
     }
-
-    updateScores();
 });
