@@ -14,13 +14,6 @@ function getComputerChoice() {
     return computerChoice;
 }
 
-function getHumanChoice() {
-    // simply ask for user input and return it without any processing
-    // assume player will type a valid string
-    let humanChoice = prompt(`Choose rock, paper or scissors`);
-    return humanChoice;
-}
-
 function playRound(humanChoice, computerChoice) {
     // make input case insensitive
     humanChoice = humanChoice.toLowerCase();
