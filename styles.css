@@ -43,6 +43,11 @@ h1, p {
     gap: 40px;
 }
 
+img {
+    width: 160px;
+    height: 160px;
+}
+
 .buttons {
     display: flex;
     align-items: center;

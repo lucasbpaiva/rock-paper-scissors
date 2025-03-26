@@ -76,8 +76,8 @@ function announceFinalScore() {
     rematchButton.addEventListener("click", () => {
         roundScore.textContent = "";
         finalScore.textContent = "";
-        playerHand.textContent = "Your choice";
-        computerHand.textContent = "Computer choice";
+        playerHand.src = "./images/question-mark.png";
+        computerHand.src = "./images/question-mark.png";
         finalScoreBoard.removeChild(rematchButton);
         // reset scores to play another game
         humanScore = 0;
@@ -115,8 +115,8 @@ rock.addEventListener("click", () => {
     if (computerScore < 5 && humanScore < 5) { //stop button from working if the game is over
         let computerChoice = getComputerChoice();
 
-        playerHand.textContent = "Rock";
-        computerHand.textContent = `${capitalizeFirstLetter(computerChoice)}`;
+        playerHand.src = "./images/rock.png";
+        computerHand.src = `./images/${computerChoice}.png`;
     
         playRound("rock", computerChoice);
         updateScoreBoard();
@@ -132,8 +132,8 @@ paper.addEventListener("click", () => {
     if (computerScore < 5 && humanScore < 5){ //stop button from working if the game is over
         let computerChoice = getComputerChoice();
 
-        playerHand.textContent = "Paper";
-        computerHand.textContent = `${capitalizeFirstLetter(computerChoice)}`;
+        playerHand.src = "./images/paper.png";
+        computerHand.src = `./images/${computerChoice}.png`;
     
         playRound("paper", computerChoice);
         updateScoreBoard();
@@ -148,8 +148,8 @@ scissors.addEventListener("click", () => {
     if (computerScore < 5 && humanScore < 5) { //stop button from working if the game is over
         let computerChoice = getComputerChoice();
 
-        playerHand.textContent = "Scissors";
-        computerHand.textContent = `${capitalizeFirstLetter(computerChoice)}`;
+        playerHand.src = "./images/scissors.png";
+        computerHand.src = `./images/${computerChoice}.png`;
     
         playRound("scissors", computerChoice);
         updateScoreBoard();
