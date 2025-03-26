@@ -39,13 +39,15 @@ h1, p {
 .roundChoices {
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
+    gap: 40px;
 }
 
 .buttons {
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
+    gap: 20px;
     height: 200px;
 }
 
